@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Uz-Koram Xarid Xizmati{% endblock %}</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page-bg: #f4f7fb;
+      --panel-bg: #ffffff;
+      --text: #172033;
+      --muted: #667085;
+      --border: #d8e0ea;
+      --accent: #0f7b6c;
+      --accent-strong: #095d53;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .app-shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .topbar {
+      border-bottom: 1px solid var(--border);
+      background: var(--panel-bg);
+    }
+
+    .topbar__inner {
+      width: min(1120px, calc(100% - 32px));
+      min-height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .foundation-panel {
+      max-width: 720px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel-bg);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 32px;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div class="brand">Uz-Koram Xarid Xizmati</div>
+        <div class="status-pill">Django + SQLite</div>
+      </div>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>
